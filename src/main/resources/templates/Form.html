@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>School Management System</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #dceefb; margin: 0; padding: 0;">
+
+  <!-- Main Heading -->
+  <div style="background-color: #2563eb; padding: 30px 0; text-align: center;">
+    <h1 style="color: white; font-size: 48px; margin: 0;">School Management System</h1>
+  </div>
+
+  <div style="padding: 20px; box-sizing: border-box;">
+
+    <!-- Message Display -->
+    <h2 th:if="${message}" th:text="${message}" style="color: green; text-align: center; margin-top: 20px;"></h2>
+
+    <!-- Reusable form card style -->
+    <style>
+      .form-card input[type="text"],
+      .form-card input[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+      }
+    </style>
+
+    <!-- Insert Form -->
+    <div class="form-card" style="max-width: 600px; margin: 30px auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <h2 style="color: #1f2937; text-align: center;">Insert Student Record</h2>
+      <form action="/insert" method="post">
+        <input type="text" name="pin" placeholder="Enter Pin">
+        <input type="text" name="name" placeholder="Enter Name">
+        <input type="text" name="marks" placeholder="Enter Marks">
+        <input type="submit" value="Submit" style="background-color: #2563eb; color: white; border: none; cursor: pointer;">
+      </form>
+    </div>
+
+    <!-- Delete Form -->
+    <div class="form-card" style="max-width: 600px; margin: 30px auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <h2 style="color: #1f2937; text-align: center;">Delete Student Record</h2>
+      <form action="/delete" method="post">
+        <input type="text" name="pin" placeholder="Enter Pin">
+        <input type="submit" value="Delete" style="background-color: #ef4444; color: white; border: none; cursor: pointer;">
+      </form>
+    </div>
+
+    <!-- Display All Button -->
+    <div class="form-card" style="max-width: 600px; margin: 30px auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
+      <h2 style="color: #1f2937;">Display All Student Records</h2>
+      <form action="/display" method="get">
+        <input type="submit" value="Display" style="background-color: #10b981; color: white; border: none; cursor: pointer; width: auto; padding: 12px 30px;">
+      </form>
+    </div>
+
+    <!-- Update Form -->
+    <div class="form-card" style="max-width: 600px; margin: 30px auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <h2 style="color: #1f2937; text-align: center;">Update Student Record</h2>
+      <form action="/" method="post">
+        <input type="text" name="pin" placeholder="Enter Pin">
+        <input type="text" name="name" placeholder="Enter Name">
+        <input type="text" name="marks" placeholder="Enter Marks">
+        <input type="submit" value="Update" style="background-color: #f59e0b; color: white; border: none; cursor: pointer;">
+      </form>
+    </div>
+
+  </div>
+</body>
+</html>
